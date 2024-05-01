@@ -1,0 +1,10 @@
+<div>
+    <h1>Closest Word Finder</h1>
+    <div>
+        <input type="text" [(ngModel)]="inputWord" placeholder="Enter a word" />
+        <button (click)="getClosestWord()">Find Closest Word</button>
+    </div>
+    <div *ngIf="closestWord">
+        <p>Closest Word: {{ closestWord }}</p>
+    </div>
+</div>
