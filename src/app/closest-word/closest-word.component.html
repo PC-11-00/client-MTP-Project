@@ -1,10 +1,16 @@
 <div>
     <h1>Closest Word Finder</h1>
     <div>
-        <input type="text" [(ngModel)]="inputWord" placeholder="Enter a word" />
-        <button (click)="getClosestWord()">Find Closest Word</button>
+        <input type="text" [formControl]="inputWordControl" placeholder="Enter a word" />
     </div>
-    <div *ngIf="closestWord">
-        <p>Closest Word: {{ closestWord }}</p>
+    <div>
+        <ul>
+            <ng-container *ngIf="suggestion">
+                <li>{{ suggestion.suggestions }}</li>
+            </ng-container>
+            <ng-container *ngIf="!suggestion">
+                <li>No suggestions available</li>
+            </ng-container>
+        </ul>
     </div>
 </div>
